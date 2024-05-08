@@ -4,6 +4,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.BrokenImagesPage;
+import pages.CheckboxesPage;
 import pages.HomePage;
 
 public class CheckboxesTest extends BaseTest{
@@ -18,9 +19,9 @@ public class CheckboxesTest extends BaseTest{
     }
 
     @Test
-    public void brokenImagesTest() {
-        //this is wrong
-        driver.navigate().to("https://the-internet.herokuapp.com/broken_images");
-        new BrokenImagesPage(driver).checkBrokenImages();
+    public void practiceFormTest() {
+        new CheckboxesPage(driver)
+                .selectCheckboxes(new String[]{"checkbox 1","checkbox 2"})
+                .verifyIfCheckboxesSelected();
     }
 }
